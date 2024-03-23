@@ -14,29 +14,6 @@ router()
 
 
 
-// //__________삭제 버튼__________//
-
-// const deleteEls = document.querySelectorAll('.delete')
-
-// deleteEls.forEach(el => {
-//   el.addEventListener('click', () => {
-//     confirm(`의 모든 데이터를 삭제하시겠습니까?`)
-//   })
-// })
-
-
-// //__________등록 버튼__________//
-
-// const submitEls = document.querySelectorAll('.submit')
-
-// submitEls.forEach(el => {
-//   el.addEventListener('click', () => {
-//     confirm('수정하시겠습니까?')
-//   })
-// })
-
-
-
 // // checkbox 체크에 대한 chatGPT의 답변
 // 그렇다면 어떤 변동이 있든 간에 저 코드가 기능할 수 있게 하려면 어떻게 해야 하니?
 // ChatGPT

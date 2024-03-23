@@ -15,7 +15,7 @@ export default class DataEdit extends Component {
 
     // getEmployeeDetail 함수를 호출하고 데이터를 기다림
     const employeeData = getEmployeeDetail(history.state.id);
-
+    const saveData = saveEditedData.state
     setTimeout(() => {
   
         // 화면에 사원 정보를 출력합니다.
@@ -24,18 +24,18 @@ export default class DataEdit extends Component {
           <div class="employee-info edit">
             <div class="photo" style="background-image: url(${employeeData.Photo})"></div>
             <div class="specs edit">
-              <div class="name edit">${savedData.Name || employeeData.Name}
-                <input type="text" value="${savedData.Name || employeeData.Name}" id="nameInput">
+              <div class="name edit">${saveData.Name || employeeData.Name}
+                <input type="text" value="${saveData.Name || employeeData.Name}" id="nameInput">
               </div>
-              <div class="family edit">${savedData.Family || employeeData.Family}
-                <input type="text" value="${savedData.Family || employeeData.Family}" id="familyInput">
+              <div class="family edit">${saveData.Family || employeeData.Family}
+                <input type="text" value="${saveData.Family || employeeData.Family}" id="familyInput">
               </div>
-              <div class="planet edit">${savedData.Planet || employeeData.Planet} / ${savedData.Division || employeeData.Division}
-                <input type="text" value="${savedData.Planet || employeeData.Planet}" id="planetInput">&nbsp
-                /&nbsp<input type="text" value="${savedData.Division || employeeData.Division}" id="divisionInput">
+              <div class="planet edit">${saveData.Planet || employeeData.Planet} / ${savedData.Division || employeeData.Division}
+                <input type="text" value="${saveData.Planet || employeeData.Planet}" id="planetInput">&nbsp
+                /&nbsp<input type="text" value="${saveData.Division || employeeData.Division}" id="divisionInput">
               </div>
-              <div class="overview edit">${savedData.Overview || employeeData.Overview}
-                <input type="text" value="${savedData.Overview || employeeData.Overview}" id="overviewInput">
+              <div class="overview edit">${saveData.Overview || employeeData.Overview}
+                <input type="text" value="${saveData.Overview || employeeData.Overview}" id="overviewInput">
               </div>
             </div>
           </div>

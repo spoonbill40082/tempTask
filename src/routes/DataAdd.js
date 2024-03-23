@@ -7,7 +7,7 @@ import { writeNewData } from "../store/storeData";
 export default class DataAdd extends Component {
 
   render() {
-    this.el.classList.add('container', 'the-employee');
+    this.el.classList.add('container', 'add');
 
 
     // getEmployeeDetail 함수를 호출하고 데이터를 기다림
@@ -19,34 +19,27 @@ export default class DataAdd extends Component {
       this.el.innerHTML = /*html*/ `
         <div class="employee-info edit-title">Edit Profile</div>
         <div class="employee-info edit">
-          <div class="photo" style="background-image: url(${employeeData.Photo})"></div>
+          <div class="photo" placeholder = "이미지 url" id="addPhotoInput"></div>
           <div class="specs edit">
-            <div class="name edit">${employeeData.Name}</div>
-            <input type="text" value="${employeeData.Name}" id="nameInput" autocapitalize="on">
-            <div class="family edit">${employeeData.Family}</div>
-            <input type="text" value="${employeeData.Family}" id="familyInput">
-            <div class="planet edit">${employeeData.Planet} / ${employeeData.Division}</div>
-            <input type="text" value="${employeeData.Planet}" id="planetInput"> / <input type="text" value="${employeeData.Division}" id="divisionInput">
-            <div class="overview edit">${employeeData.Overview}
-              <input type="text" value="${employeeData.Overview}" id="overviewInput">
+            <input type="text" placeholder = "이름" id="addNameInput">            
+            <input type="text" placeholder = "패밀리" id="addFamilyInput">            
+            <input type="text" placeholder = "행성" id="addPlanetInput"> / <input type="text" value="${employeeData.Division}" id="divisionInput">
+            <input type="text" placeholder = "설명" id="addOverviewInput">
             </div>
           </div>
         </div>
         <div class="btn-area">
-          <div class="delete-area">
-            <button class="delete">Delete</button>
-          </div>
-          <div class="submit-and-reset-area">
-            <button type= "submit" class="reset" id="submitButton">Submit</button>
-            <button type="reset" id="resetButton">Reset</button >
+          <div class="add-area">
+            <button class="add" id="addButton">Add</button>
           </div>
         </div>
       `;
 
       // 수정된 내용을 로컬 스토리지에 저장
-      document.getElementById('submitButton').addEventListener('click', () => {
+      document.getElementById('addButton').addEventListener('click', () => {
         const savedData = {
           "Id": history.state.id,
+          "Photo": document.getElementById('phtotoInput').value,
           "Name": document.getElementById('nameInput').value,
           "Family": document.getElementById('familyInput').value,
           "Planet": document.getElementById('planetInput').value,
@@ -60,10 +53,10 @@ export default class DataAdd extends Component {
 
         //새로 고침(반영 확인)
         window.location.href = window.location.href;
-        alert('수정 완료')
+        alert('추가 완료')
       });
     } else {
-      alert('수정 실패')
+      alert('추가 실패')
     }
   }
 }
